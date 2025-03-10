@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url(./img/flight.jpg); */
+    background-size: cover;
+    background-position: center;
+
+    font-family: sans-serif;
+}
+
+.menu_bar{
+    background: rgb(0, 100, 0);
+    text-align: center;
+    height: 80px;
+}
+
+.menu_bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+    height: 100px;
+}
+
+.menu_bar ul li{
+    width: 150px;
+    margin: 15px;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.menu_bar ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.active, .menu_bar ul li:hover{
+    background: #2bab0d;
+    border-radius: 3px;
+    height: 50px;
+}
+
+.menu_bar .fa{
+    margin-right: 8px;
+}
+
+.menu_bar .sub_menu_logout .fa{
+    margin-right: 8px;
+}
+
+.menu_bar .user_profile{
+    white-space:nowrap;
+}
+
+.sub_menu_logout{
+    display: none;
+    height: 60px;
+    width: 150px;
+}
+
+.menu_bar ul li:hover .sub_menu_logout{
+    display: block;
+    position: absolute;
+    background: rgb(0, 100, 0);
+    margin-top: 15px;
+    margin-left: -15px;
+    z-index: 1000;
+}
+
+.menu_bar ul li:hover .sub_menu_logout ul{
+    display: block;
+    margin: 10px;
+}
+.menu_bar ul li:hover .sub_menu_logout ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent; 
+    border-radius: 0;
+    text-align: left;
+}
+.menu_bar ul li:hover .sub_menu_logout ul li:last-child{
+    border-bottom: none;
+}
+
+.menu_bar ul li:hover .sub_menu_logout ul li a:hover{
+    color: #b2ff00;
+} 

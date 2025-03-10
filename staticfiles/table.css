@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif, Microsoft YaHei;
+}
+hr{
+    color: #d1d0d0;
+}
+h3{
+    color:rgb(0, 100, 0);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.title {
+    text-align: left;
+    font-weight: 500;
+    font-size: 16px;
+    color: #d1d0d0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.content {
+    text-align: left;
+    font-weight: 500;
+    font-size: 18px;
+    color: #6d7379;
+    margin-bottom: 30px;
+
+}
+.info {
+    margin:0 auto;
+    margin-top: 50px;
+}
+.info-section-aircraft {
+    padding: 16px;
+    background-color: #efefef;
+    position: absolute;
+    height: 500px;
+    width: 250px;
+    margin-top: 30px;
+    left: 50px;
+}
+.info-section-airline {
+    padding: 16px;
+    background-color: #efefef;
+    position: absolute;
+    height: 950px;
+    width: 250px;
+    margin-top: 30px;
+    left: 50px;
+}
+.info-section-airport {
+    padding: 16px;
+    background-color: #efefef;
+    position: absolute;
+    height: 650px;
+    width: 250px;
+    margin-top: 30px;
+    left: 50px;
+}
+.foreign-info-table {
+    max-width: 900px;
+    border: 1px solid rgb(0, 100, 0);
+    background-color: #efefef33;
+    padding: 5px;
+    overflow: auto;
+    border-radius: 4px;
+    width: 60%;
+    margin: auto;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.foreign-info-table-middle {
+    max-width: 900px;
+    border: 1px solid rgb(0, 100, 0);
+    background-color: #efefef33;
+    padding: 5px;
+    overflow: auto;
+    border-radius: 4px;
+    width: 80%;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+table {
+    width: 100%;
+    font-size: 13px;
+    color: #444;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+table>thead {
+    background-color: rgb(0, 100, 0);
+    color: #fff;
+}
+table>thead th {
+    padding: 15px;
+}
+table th,
+table td {
+    border: 1px solid #00000017;
+    padding: 10px 15px;
+}
+table>tbody>tr {
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+}
+table>tbody>tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+}
+table>tbody>tr:hover{
+    filter: drop-shadow(0px 2px 6px #0002);
+}
+.airportImage {
+    max-width: 1000px;
+    overflow: auto;
+    width: 65%;
+    margin: auto;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+img {
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+}

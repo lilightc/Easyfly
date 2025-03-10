@@ -1,0 +1,156 @@
+* {
+    /* -webkit-box-sizing: content-box; */
+    /* -moz-box-sizing: content-box; */
+    box-sizing: content-box;
+}
+
+body {
+    color: #333;
+    font-size: 12px;
+    font-family: Tahoma,Arial,sans-serif;
+}
+
+
+.flight-list .flight-item .flight-box .flight-airline .airline-name {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.result-wrapper {
+    width: 910px;
+    margin-top: 2px;
+    margin-left: 250px;
+    transition: 0.3s ease-in-out;
+}
+
+.result-wrapper:hover{
+    /* box-shadow: 1px 1px 1px 1px #888888; */
+    filter: drop-shadow(0px 2px 4px #888888);
+}
+
+.result-wrapper .flight-list.root-flights {
+    margin-top: 2px;
+}
+
+.flight-list {
+    line-height: 1;
+}
+
+.flight-list .flight-item .flight-box {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    padding: 0 210px 0 10px;
+    border-top: 1px solid transparent;
+    -webkit-box-shadow: 0 1px 1px hsl(0deg 0% 80% / 50%);
+    -moz-box-shadow: 0 1px 1px hsla(0,0%,80%,.5);
+    box-shadow: 0 1px 1px hsl(0deg 0% 80% / 50%);
+    /* -webkit-transition: -webkit-box-shadow .15s; */
+    transition: box-shadow .15s,-webkit-box-shadow .15s,-moz-box-shadow .15s;
+}
+
+.result-wrapper .flight-list.root-flights .flight-item .flight-box .flight-row {
+    padding: 18px 0 13px;
+    padding-top: 18px;
+    padding-right: 0px;
+    padding-bottom: 13px;
+    padding-left: 0px;
+}
+
+.result-wrapper .flight-list.root-flights .flight-item .flight-box .flight-airline {
+    padding-left: 70px;
+}
+
+.flight-list .flight-item .flight-box .flight-airline {
+    position: relative;
+    padding-left: 50px;
+    width: 210px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.result-wrapper .flight-list.root-flights .flight-item .flight-box .flight-detail {
+    width: 400px;
+}
+
+.flight-list .flight-item .flight-box .flight-airline .airline-name {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.flight-list .flight-item .flight-box .flight-airline .plane {
+    display: block;
+    cursor: help;
+    margin-top: 5px;
+}
+
+.result-wrapper .flight-list.root-flights .flight-item .flight-box .flight-detail {
+    width: 398px;
+}
+
+.flight-list .flight-item .flight-box .flight-detail {
+    display: inline-block;
+    vertical-align: middle;
+    width: 360px;
+    text-align: center;
+}
+
+.result-wrapper .flight-list.root-flights .flight-item .flight-box .flight-detail .depart-box {
+    width: 120px;
+}
+
+.flight-list .flight-item .flight-box .flight-detail .depart-box {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 110px;
+    text-align: right;
+}
+
+.result-wrapper .flight-list.root-flights .flight-item .flight-box .flight-detail .time {
+    font-size: 30px;
+}
+
+.flight-list .flight-item .flight-box .flight-detail .time {
+    /* position: relative; */
+    /* font-size: 26px; */
+    margin-bottom: 4px;
+}
+
+
+.flight-list .flight-item .flight-box .flight-detail .airport {
+    margin-bottom: 4px;
+}
+
+.flight-list .flight-item .flight-box .flight-detail .arrow-box {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+    margin: 0 10px;
+    padding-top: 4px;
+}
+
+.fa .fa-long-arrow-right{
+    /* background-position: -126px -200px; */
+    width: 120px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.flight-list .flight-item .flight-box .flight-detail .arrow-box .transfer-info-group {
+    text-align: center;
+    padding: 0 4px;
+}
+
+.flight-list .flight-item .flight-box .flight-detail .arrive-box {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    text-align: left;
+}
+
+
