@@ -9,13 +9,13 @@ Easyfly is a web-based platform that allows users to search and retrieve detaile
 
  Install dependencies using the following command:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ### Running the Server
 
 To run the application locally, execute:
 
-python3 manage.py runserver 0.0.0.0:8000
+`python3 manage.py runserver 0.0.0.0:8000`
 
 Then, visit `http://127.0.0.1:8000/hello/search_page/` in your browser.
 
