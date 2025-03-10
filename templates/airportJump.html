@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Airports</title>
+    <link rel="stylesheet" href="../../static/table.css">
+    <link rel="stylesheet" href="../../static/nav_bar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/link.css">
+    <link rel="shortcut icon" href="../../static/S.ico" />
+    
+</head>
+
+<body>
+    <div class="menu_bar">  <!--记得url替代#！-->
+        <!-- <img src="img/logo.png" class="logo"> -->
+        <ul>
+            <li><a href="/hello/search_page/"><i class="fa fa-search" aria-hidden="true"></i>Search</a></li>
+            <!--<li><a href="/hello/prediction/"><i class="fa fa-plane" aria-hidden="true"></i>Prediction</a>
+            </li>-->
+            <li class = "active"><a href="/hello/airport/"><i class="fa fa-map-marker icon-large" aria-hidden="true"></i>Airports</a>
+            </li>
+            <li><a href="/hello/airline/"><i class="fa fa-paper-plane" aria-hidden="true"></i>Airlines</a>
+            </li>
+            <li><a href="/hello/aircraft/"><i class="fa fa-plane" aria-hidden="true"></i>Aircrafts</a>
+            </li>
+            <li class="user_profile"><a href="/hello/user/"><i class="fa fa-user-circle" aria-hidden="true"></i>User Center</a>
+                <div class="sub_menu_logout">
+                    <ul>
+                        <li><a href="/hello/logout/">Log out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class = "page-section">
+        <div class="info-section-airport">
+            <div class="info"> 
+            <hr>
+            <p class="title">
+                ICAO
+            </p>
+            <p class="content">
+                {{ airport_icao }}
+            </p>
+            <p class="title">
+                Name
+            </p>
+            <p class="content">
+                {{ name }}
+            </p>
+            <p class="title">
+                City
+            </p>
+            <p class="content">
+                {{ city }}
+            </p>
+            <p class="title">
+                Frequently visit airline
+            </p>
+            <p class="content">
+                1st: &ensp;&ensp;<a href="{% url 'airlineJump' airline_1  %}">{{ airline_1 }}</a>
+            </p>
+            <p class="content">
+                2nd: &ensp;<a href="{% url 'airlineJump' airline_2  %}">{{ airline_2 }}</a>
+            </p>
+            <p class="content">
+                3rd: &ensp;<a href="{% url 'airlineJump' airline_3  %}">{{ airline_3 }}</a>
+            </p>
+            <p class="title">
+                Average delay rate
+            </p>
+            <p class="content">
+                {{ avg_delay }}
+            </p>
+            <hr>
+            </div>
+        </div>
+        <div class = "airportImage">
+            <img src="../../static/airport.jpg" alt="">
+            <div class="mask"></div>
+        </div>
+    </div>
+</body>
+</html>

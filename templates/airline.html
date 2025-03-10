@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Airports</title>
+    <link rel="stylesheet" href="../static/nav_bar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/link.css">
+    <link rel="shortcut icon" href="../static/S.ico" />
+</head>
+
+<body style="overflow-y:scroll;">
+    <div class="menu_bar">  <!--记得url替代#！-->
+        <!-- <img src="img/logo.png" class="logo"> -->
+        <ul>
+            <li><a href="/hello/search_page/"><i class="fa fa-search" aria-hidden="true"></i>Search</a></li>
+            <!--<li><a href="/hello/prediction/"><i class="fa fa-plane" aria-hidden="true"></i>Prediction</a>
+            </li>-->
+            <li><a href="/hello/airport/"><i class="fa fa-map-marker icon-large" aria-hidden="true"></i>Airports</a>
+            </li>
+            <li class = "active"><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>Airlines</a>
+            </li>
+            <li><a href="/hello/aircraft/"><i class="fa fa-plane" aria-hidden="true"></i>Aircrafts</a>
+            </li>
+
+            <li class="user_profile"><a href="/hello/user/"><i class="fa fa-user-circle" aria-hidden="true"></i>User Center</a>
+                <div class="sub_menu_logout"> <!--class="sub_menu1"-->
+                    <ul>
+                        <li><a href="/hello/logout/">Log out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        var navbar = document.getElementById("navbar");
+        var menu = document.getElementById("menu");
+
+        window.onscroll = function(){
+            if(window.pageYOffset >= menu.offsetTop){
+                navbar.classList.add("sticky");
+            } else{
+                navbar.classList.remove("sticky")
+        }
+    }
+    </script>
+
+    <div class = "page-section">
+        <form action = "/hello/airline/" method = "POST">
+            {% csrf_token %}
+            <div class="wrap">
+                <div class="search">
+                   <input type="text" class="searchTerm" name="searchAirline" placeholder="Search for airline">
+                   <button type="submit" class="searchButton">
+                     <i class="fa fa-search"></i>
+                  </button>
+                </div>
+                <!-- TODO: 需要改一下页面布局 -->
+            </div>
+            <div class="search_by">
+                <b>Search By</b>&emsp;&emsp;&emsp;&emsp;
+                <input type="radio" name="Search_by" id="IATA" value="IATA">
+                <label for="IATA">IATA</label>&emsp;&emsp;&emsp;
+                <input type="radio" name="Search_by" id="ICAO" value="ICAO">
+                <label for="ICAO">ICAO</label>&emsp;&emsp;&emsp;
+                <input type="radio" name="Search_by" id="NAME" value="NAME">
+                <label for="NAME">NAME</label>&emsp;&emsp;&emsp;
+            </div>
+        </form>
+        <div class = "link-section-select">
+            {% for al in airline %}
+            <hr>
+            <div class = "link-wrapper">
+                <div class = "long">
+                <a href="{% url 'airlineJump'  al.airline_iata  %}">{{ al.airline_name }}</a>
+                <p>{{ al.content }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p>No results found!</p>
+            {% endfor %}
+            <hr>
+        </div>
+        <div class = "link-section"></div>
+
+    </div>
+</body>
+</html>

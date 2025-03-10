@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Airports</title>
+    <link rel="stylesheet" href="../../static/table.css">
+    <link rel="stylesheet" href="../../static/nav_bar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/link.css">
+    <link rel="shortcut icon" href="../../static/S.ico" />
+    
+</head>
+
+<body style="overflow-y:scroll;">
+    <div class="menu_bar">  <!--记得url替代#！-->
+        <!-- <img src="img/logo.png" class="logo"> -->
+        <ul>
+            <li><a href="/hello/search_page/"><i class="fa fa-search" aria-hidden="true"></i>Search</a></li>
+            <!--<li><a href="/hello/prediction/"><i class="fa fa-plane" aria-hidden="true"></i>Prediction</a>
+            </li>-->
+            <li><a href="/hello/airport/"><i class="fa fa-map-marker icon-large" aria-hidden="true"></i>Airports</a>
+            </li>
+            <li class = "active"><a href="/hello/airline/"><i class="fa fa-paper-plane" aria-hidden="true"></i>Airlines</a>
+            </li>
+            <li><a href="/hello/aircraft/"><i class="fa fa-plane" aria-hidden="true"></i>Aircrafts</a>
+            </li>
+            <li class="user_profile"><a href="/hello/user/"><i class="fa fa-user-circle" aria-hidden="true"></i>User Center</a>
+                <div class="sub_menu_logout">
+                    <ul>
+                        <li><a href="/hello/logout/">Log out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class = "page-section">
+        <div class="info-section-airline">
+            <div class="info"> <!--有时间的话插航空公司图片-->
+            <hr>
+            <p class="title">
+                IATA
+            </p>
+            <p class="content">
+                {{ iata }}
+            </p>
+            <p class="title">
+                ICAO
+            </p>
+            <p class="content">
+                {{ icao }}
+            </p>
+            <p class="title">
+                Name
+            </p>
+            <p class="content">
+                {{ name }}
+            </p>
+            <p class="title">
+                Most owned aircraft type
+            </p>
+            <p class="content">
+                1st: &ensp;<a href="{% url 'aircraftJump' aircraft_type_1  %}">{{ aircraft_type_1 }}</a>, {{type_1_own}} owned.
+            </p>
+            <p class="content">
+                2nd: <a href="{% url 'aircraftJump' aircraft_type_2  %}">{{ aircraft_type_2 }}</a>, {{type_2_own}} owned.
+            </p>
+            <p class="content">
+                3rd: &ensp;&ensp;<a href="{% url 'aircraftJump' aircraft_type_3  %}">{{ aircraft_type_3 }}</a>, {{type_3_own}} owned.
+            </p>
+            <p class="title">
+                Most frequently depature airport
+            </p>
+            <p class="content">
+                <a href="{% url 'airportJump' most_depature_airport  %}">{{ most_depature_airport }}</a>
+            </p>
+            <p class="title">
+                Most frequently destination airport
+            </p>
+            <p class="content">
+                <a href="{% url 'airportJump' most_destination_airport  %}">{{ most_destination_airport }}</a>
+            </p>
+            <p class="title">
+                Average delay rate
+            </p>
+            <p class="content">
+                {{ avg_delay }}
+            </p>
+            <hr>
+            </div>
+        </div>
+        <div class = "foreign-info-table">    
+            <h3>Fleet Information</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Register Number</th>
+                        <th>Aircraft Model</th>
+                        <th>Age</th>
+                        <th>Passenger Capacity</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for ac in aircraft %}
+                    <tr>
+                        <td>{{ ac.aircraft_rn }}</td>
+                        <td>{{ ac.aircraft_type }}</td>
+                        <td>{{ ac.age }}</td>
+                        <td>{{ ac.capacity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>        
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/login_temp.css"/>
+    <title>Login Page</title>
+    <link rel="shortcut icon" href="../static/S.ico" />
+</head>
+<body>
+<form action="/hello/login_temp/" method="post"><!--用URL替代.-->
+    {% csrf_token %}
+    {% if error_message %}
+    <div class = "error_message">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        {{ error_message }}
+    </div>
+    {% endif %}
+    <div class="container">
+        <h1>Login</h1>
+        <div class = "username">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username (email)" name="username" required><br>
+        </div>
+        <div class = "password">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+        <div class = "create">
+            Test account:130000005@link.cuhk.edu.cn <br>Password: 123456<br>
+            <a href="/hello/signUp_page/">Create account</a>
+        </div>
+        <br>
+        <div class = "adminLogin">
+            <a href="/hello/admin/">Login as administrator</a> <!--用URL替代#-->
+        </div>
+
+    </div>
+</form>
+</body>
+</html>

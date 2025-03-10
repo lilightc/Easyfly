@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/signUp.css"/>
+    <link rel="shortcut icon" href="../static/S.ico" />
+    <title>Sign Up</title>
+</head>
+<body>
+<form action="/hello/signUp/" method="post"><!--用URL替代.-->
+    {% csrf_token %}
+    {% if error_message %}
+    <div class = "error_message">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        {{ error_message }}
+    </div>
+    {% endif %}
+    <div class="container">
+        <h1>Create Account</h1>
+        <div class = "username">
+            <label for="uname"><b>Username</b></label><br>
+            <input type="text" placeholder="Enter Your Name" name="username" required><br>
+        </div>
+        <div class = "password">
+            <label for="psw"><b>Password</b></label><br>
+            <input type="text" placeholder="Enter Password" name="password" required>
+        </div>
+        <div class = "email">
+            <label for="eml"><b>Email</b></label><br>
+            <input type="text" placeholder="Enter Email as Username" name="email" required>
+        </div>
+        <div class = "age">
+            <label for = "age"><b>Age</b></label><br>
+            <input type = "text" placeholder = "Enter Your Age" name = "age" required>
+        </div>
+        <div class = "gender">
+            <label for="gender"><b>Gender</b></label><br>
+            <input type="radio" name="gender" id="male" value = "Male">
+            <label for="sex1">Male<br>
+            <input type="radio" name="gender" id="female" value = "Female">
+            <label for="sex2">Female<br>
+            <input type="radio" name="gender" id="others" value = "Others">
+            <label for="sex3">Others<br>
+        </div>
+        <button type="submit" onclick="jump2Main()">Create Account</button> <!--button的响应事件js-->
+    </div>
+</form>
+</body>
+</html>
+<script>
+    function jump2Main() {
+        location.href = 'search_page.html'; //替换成主界面url
+    }
+</script>

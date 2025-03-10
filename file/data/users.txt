@@ -1,0 +1,1 @@
+('130000001@link.cuhk.edu.cn','Amy','123456','Female',20),('130000002@link.cuhk.edu.cn','Bob','123456','Male',20),('130000003@link.cuhk.edu.cn','Tom','123456','Male',20),('130000004@link.cuhk.edu.cn','Allen','123456','Female',22),('130000005@link.cuhk.edu.cn','Linda','123456','Female',19);
